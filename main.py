@@ -17,7 +17,7 @@ def read_configuration(dirname) -> dict:
     try:
         with open(config_path) as f:
             content = f.read()
-            config = yaml.load(content, Loader=yaml.FullLoader)
+            config = yaml.load(content, Loader=yaml.SafeLoader)
             logging.debug(f"Configuration dict: {content}")
             return config
     except Exception as e:
